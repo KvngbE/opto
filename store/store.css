@@ -1,0 +1,228 @@
+.navbar-blue {
+    background-color: #007bff;
+}
+
+.medium-search .form-control {
+    font-size: 1.5rem;
+    padding: 20rem 20rem;
+    width: 100%; /* Responsive width */
+    max-width: 400px; /* Maximum width */
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.medium-search .btn {
+    font-size: 1.5rem;
+    padding: 0.75rem 2rem;
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.medium-search .btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pro {
+    font-weight: 700;
+    font-size: 3rem; /* Responsive font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Better readability */
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .large-search .form-control {
+        font-size: 1.25rem;
+        max-width: 100%;
+    }
+    .large-search .btn {
+        font-size: 1.25rem;
+        padding: 0.5rem 1.5rem;
+    }
+    .pro {
+        font-size: 2rem;
+    }
+    .backimg {
+        min-height: 300px;
+        padding: 1rem;
+    }
+}
+
+.logo{
+   width:70px;
+}
+
+
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container for the catalogue */
+.catalogue-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Title */
+.catalogue-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Grid layout for items */
+.catalogue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Individual catalogue item */
+.catalogue-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.catalogue-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling */
+.catalogue-item img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Type styling */
+.catalogue-item h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #34495e;
+}
+
+/* Price styling */
+.catalogue-item .price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+
+.catalogue-item .cart{
+    width:70px;
+}
+
+.btn:visited{
+    color:white;
+}
+a:visited{
+    color: #333;
+}
+
+.catalogue-item a{
+    text-decoration: none;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-link:hover {
+    color: #ffc107; /* Bootstrap Warning Color */
+  }
+  .social-icon {
+    color: white;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .social-icon:hover {
+    transform: scale(1.2);
+    color: #ffc107;
+  }
+
+
+   /* Pop-up Styling */
+   .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+  }
+  .popup-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+
+     /* Button styling */
+     .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+
+      .social-icon i {
+        font-size: 32px; /* Increase the number to make icons larger */
+        margin-right: 10px; /* Add spacing between icons if needed */
+        color: #fff; /* Or any color you prefer */
+        transition: transform 0.3s;
+      }
+      
+      .social-icon i:hover {
+        transform: scale(1.2); /* Makes them pop on hover */
+        color: #ffcc00; /* Example hover color */
+      }
+      
