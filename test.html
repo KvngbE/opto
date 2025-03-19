@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay with Paystack</title>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f4f4f4;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <form id="payment-form">
+    <div class="form-group">
+      <label for="customer_email">Email:</label>
+      <input type="email" id="customer_email" name="customer_email" class="form-control" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+      <label for="product_price">Price (in GHS):</label>
+      <input type="number" id="product_price" name="product_price" class="form-control" placeholder="Enter price" required>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="payWithPaystack()">Pay Now</button>
+  </form>
+  
+  
+  <script>
+    function payWithPaystack() {
+  // Retrieve values entered by the user
+  var email = document.getElementById('customer_email').value;
+  var price = document.getElementById('product_price').value;
+  
+  // Convert price to smallest currency unit (adjust conversion if needed)
+  // For example, if currency is GHS and smallest unit is pesewas, multiply by 100
+  var amount = price * 100;
+
+  var handler = PaystackPop.setup({
+    key: 'pk_test_5b3d6af15134cb8d5ec2bfea04bc116be0bc2224', // Replace with your actual public key
+    email: email,           // Use user-provided email
+    amount: amount,         // Dynamic amount based on user input
+    currency: 'GHS',        // Currency code
+    ref: '' + Math.floor((Math.random() * 1000000000) + 1), // Generate a unique reference
+    // Optional callback functions
+    callback: function(response) {
+      alert('Payment complete! Reference: ' + response.reference);
+      // Optionally redirect or perform other actions here
+    },
+    onClose: function() {
+      alert('Transaction was cancelled.');
+    }
+  });
+  handler.openIframe(); // Open the payment modal
+}
+  </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Catalog Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Store Catalog</h1>
+    <input type="text" id="searchInput" placeholder="Search catalog...">
+    <ul id="catalogList">
+        <!-- Catalog items will be displayed here -->
+    </ul>
+
+    <script>
+        const catalog = [
+            { id: 1, name: 'Smartphone' },
+            { id: 2, name: 'Laptop' },
+            { id: 3, name: 'Headphones' },
+            { id: 4, name: 'Tablet' },
+            { id: 5, name: 'Smartwatch' },
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const catalogList = document.getElementById('catalogList');
+
+        function renderCatalog(filteredCatalog) {
+            catalogList.innerHTML = ''; // Clear the existing list
+            filteredCatalog.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item.name;
+                catalogList.appendChild(li);
+            });
+        }
+
+        function handleSearch() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredCatalog = catalog.filter(item =>
+                item.name.toLowerCase().includes(searchTerm)
+            );
+            renderCatalog(filteredCatalog);
+        }
+
+        // Initial render of all catalog items
+        renderCatalog(catalog);
+
+        // Add event listener for input changes
+        searchInput.addEventListener('input', handleSearch);
+    </script>
+</body>
+</html>
+
+
+</body>
+</html>

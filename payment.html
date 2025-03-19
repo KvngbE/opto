@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <link rel="icon" href="/img/favicon.ico">
+    
+     <!-- Bootstrap 4.0 CSS -->
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+</head>
+<body>
+  <body class="bg-light">
+
+    <div class="container d-flex justify-content-center align-items-start" style="min-height: 100vh; padding-top: 30px;">
+        <div class="card shadow-sm p-4" style="width: 100%; max-width: 400px;">
+            <h1 class="h3 text-center mb-4">Payment Page</h1>
+            <p><strong>Item Name:</strong> <span id="item-name"></span></p>
+            <p><strong>Price:</strong> <span id="item-price"></span></p>
+
+            <form id="email-form">
+                <div class="form-group">
+                    <label for="email">Enter your Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemTitle = urlParams.get('title');
+        const itemPrice = urlParams.get('price');
+
+        // Display item details
+        document.getElementById('item-name').textContent = itemTitle;
+        document.getElementById('item-price').textContent = itemPrice;
+
+        // Handle email form submission
+        document.getElementById('email-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+
+            // Create a Paystack payment request
+            const handler = PaystackPop.setup({
+                key: 'pk_test_5b3d6af15134cb8d5ec2bfea04bc116be0bc2224', // Replace with your actual public key
+                email: email,
+                amount: parseFloat(itemPrice) * 100, // 
+                currency: 'GHS', // Assuming you want to charge in Naira
+                ref: 'order-' + Math.floor(Math.random() * 1000000), // Unique reference for the transaction
+                callback: function(response) {
+                    alert('Payment successful! Reference: ' + response.reference);
+                },
+                onClose: function() {
+                    alert('Payment window closed');
+                }
+            });
+
+            // Start the payment process
+            handler.openIframe();
+        });
+    </script>
+    
+    <!-- Include Bootstrap JS and dependencies (Popper.js and jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

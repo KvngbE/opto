@@ -1,0 +1,226 @@
+  /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    /* Navbar custom styling */
+    .navbar-blue {
+      background-color: #007bff;
+    }
+    .logo {
+      width: 70px;
+    }
+    .cart-menu {
+      width: 40px;
+    }
+    .medium-search .form-control {
+      font-size: 1.5rem;
+      padding: 20rem 20rem;
+      width: 100%; /* Responsive width */
+      max-width: 400px; /* Maximum width */
+      margin-top: 20px;
+      margin-bottom: 0;
+  }
+  .medium-search .btn {
+      font-size: 1.5rem;
+      padding: 0.75rem 2rem;
+      background-color: #fff;
+      color: #007bff;
+      border: 1px solid #007bff;
+      margin-top: 20px;
+      margin-bottom: 0;
+  }
+  .medium-search .btn:hover {
+      background-color: #007bff;
+      color: #fff;
+  }
+    /* Promotion Section */
+    .backimg {
+      background-image: url('img/istockphoto-1399395748-612x612.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 400px;
+      padding: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      border-radius: 10px;
+      margin: 40px;
+    }
+    .pro {
+      font-weight: 700;
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+   /* Responsive adjustments */
+@media (max-width: 768px) {
+  .large-search .form-control {
+      font-size: 1.25rem;
+      max-width: 100%;
+  }
+  .large-search .btn {
+      font-size: 1.25rem;
+      padding: 0.5rem 1.5rem;
+  }
+  .pro {
+      font-size: 2rem;
+  }
+  .backimg {
+      min-height: 300px;
+      padding: 1rem;
+  }
+}
+    /* Catalogue Container */
+    .catalogue-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .catalogue-container h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    .catalogue-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .catalogue-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+    .catalogue-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .catalogue-item img {
+      width: 100%;
+      max-width: 150px;
+      height: auto;
+      border-radius: 4px;
+    }
+    .catalogue-item h3 {
+      font-size: 1.2em;
+      margin: 10px 0;
+      color: #34495e;
+    }
+    .catalogue-item .price {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #e74c3c;
+    }
+    .catalogue-item a {
+      text-decoration: none;
+    }
+    /* Button styling */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    /* Footer Styling */
+    footer {
+      background: #007bff;
+      color: white;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+    footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    footer .row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    footer h5 {
+      margin-bottom: 10px;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer ul li {
+      margin-bottom: 5px;
+    }
+    footer a.footer-link {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a.footer-link:hover {
+      color: #ffc107;
+    }
+    /* Pop-up Styling */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+      width: 300px;
+      text-align: center;
+      position: relative;
+    }
+    .popup-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    
+    .social-icon i {
+      font-size: 32px; /* Increase the number to make icons larger */
+      margin-right: 10px; /* Add spacing between icons if needed */
+      color: #fff; /* Or any color you prefer */
+      transition: transform 0.3s;
+    }
+    
+    .social-icon i:hover {
+      transform: scale(1.2); /* Makes them pop on hover */
+      color: #ffcc00; /* Example hover color */
+    }
+    
+    

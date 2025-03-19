@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Product Catalog</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; }
+    .catalog { max-width: 800px; margin: 50px auto; padding: 20px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .product { border: 1px solid #ccc; padding: 15px; margin: 15px 0; cursor: pointer; transition: background 0.3s; }
+    .product:hover { background: #eef; }
+    h1 { text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="catalog">
+    <h1>Product Catalog</h1>
+    <!-- Each product div calls a JavaScript function passing product name and price -->
+    <div class="product" onclick="goToPayment('Product A', 1500)">
+      <h2>Product A</h2>
+      <p>Price: NGN 1500</p>
+    </div>
+    <div class="product" onclick="goToPayment('Product B', 2500)">
+      <h2>Product B</h2>
+      <p>Price: NGN 2500</p>
+    </div>
+    <div class="product" onclick="goToPayment('Product C', 3500)">
+      <h2>Product C</h2>
+      <p>Price: NGN 3500</p>
+    </div>
+  </div>
+
+  <script>
+    // Redirects to the payment page with product details as query parameters.
+    function goToPayment(productName, price) {
+      window.location.href = `payment.html?product=${encodeURIComponent(productName)}&price=${price}`;
+    }
+  </script>
+</body>
+</html>
